@@ -21,7 +21,7 @@ class Animation:
         self.frames = len(pos)
         self.interval = interval
         self.fig = plt.figure()
-        self.ax = plt.axes(xlim=(0, 2), ylim=(-2, 2))
+        self.ax = plt.axes(xlim=(-10, 10), ylim=(-10, 10))
         self.line, = self.ax.plot([], [], lw=2, marker='o')
 
     # initialization function: plot the background of each frame
