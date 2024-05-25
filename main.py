@@ -3,19 +3,31 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-earth = ms.Planet(10, 10, [10, 5], [10, 10])
-mars = ms.Planet(10, 10, [10, 5], [-10, -10])
-position = []
-for i in range(1000):
+earth = ms.Planet(10, 10, [0, 0], [0, 0])
+mars = ms.Planet(10, 10, [10.0, 0.0], [0.0, 10.0])
 
-    earth.apply_force(np.array([0, -1]), 0.1)
-    pos = earth.get_pos()
-    position.append(pos)
-position = np.array(position)
-position = np.transpose(position)
+e_pos = []
+m_pos = []
 
-x = position[0]
-y = position[1]
+dt = 0.001
+for i in range(20000):
+    force_mag = ms.get_gravity(earth, mars)
+    unit_dir = earth.get_direction(mars)
 
-plt.plot(x, y)
+    f_r = -(10**2*10/10)*unit_dir
+    mars.apply_force(f_r, dt)
+
+    e_pos.append(earth.get_pos())
+    m_pos.append(mars.get_pos())
+
+e_pos = np.transpose(e_pos)
+m_pos = np.transpose(m_pos)
+
+earth_x = e_pos[0]
+earth_y = e_pos[1]
+mars_x = m_pos[0]
+mars_y = m_pos[1]
+
+plt.scatter(earth_x, earth_y)
+plt.plot(mars_x, mars_y)
 plt.show()
