@@ -1,6 +1,7 @@
 import mass as ms
 import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
+from matplotlib import animation
 
 
 earth = ms.Planet(10, 10, [0, 0], [0, 0])
@@ -10,12 +11,12 @@ e_pos = []
 m_pos = []
 
 dt = 0.001
-for i in range(20000):
+for i in range(7000):
     force_mag = ms.get_gravity(earth, mars)
     unit_dir = earth.get_direction(mars)
 
-    f_r = -(10**2*10/10)*unit_dir
-    mars.apply_force(f_r, dt)
+    f_g = -force_mag*unit_dir
+    mars.apply_force(f_g, dt)
 
     e_pos.append(earth.get_pos())
     m_pos.append(mars.get_pos())
@@ -31,3 +32,5 @@ mars_y = m_pos[1]
 plt.scatter(earth_x, earth_y)
 plt.plot(mars_x, mars_y)
 plt.show()
+
+
