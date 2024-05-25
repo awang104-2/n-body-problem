@@ -1,5 +1,5 @@
 import numpy as np
-G = 10  # 6.67430/10**11
+G = 100  # 6.67430/10**11
 
 
 class Planet:

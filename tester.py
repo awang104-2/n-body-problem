@@ -30,3 +30,4 @@ circlex = np.linspace(0,10,1000)
 circley = np.sqrt(10**2-circlex**2)
 # plt.plot(circlex, circley, linestyle='--')
 plt.show()
+
