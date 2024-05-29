@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="842ea7b7-69f3-45b9-a980-c96d6a58504e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animation_tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/animation_tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass.py" beforeDir="false" afterPath="$PROJECT_DIR$/mass.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +34,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.animation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.animation_sample.executor&quot;: &quot;Run&quot;,
-    &quot;Python.animation_tester.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mass.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tester.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;foo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/awee2/PycharmProjects/burgers1d_godunov&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.animation.executor": "Run",
+    "Python.animation_sample.executor": "Run",
+    "Python.animation_tester.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mass.executor": "Run",
+    "Python.tester.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "foo",
+    "last_opened_file_path": "C:/Users/awee2/PycharmProjects/burgers1d_godunov",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
