@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 
-def run():
+def run_circle():
     earth = ms.Planet(10, 10, [0, 0], [0, 0])
     mars = ms.Planet(10, 10, [10.0, 0.0], [0.0, 10.0])
 
@@ -36,5 +36,5 @@ def run():
     plt.show()
 
 
-run()
-
+def run():
+    print("Fill with code.")
