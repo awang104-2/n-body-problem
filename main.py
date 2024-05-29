@@ -2,8 +2,8 @@ import mass as ms
 
 
 def run_circle():
-    earth = ms.Planet(10, 10, [0, 0], [0, 0])
-    mars = ms.Planet(10, 10, [10.0, 0.0], [0.0, 10.0])
+    earth = ms.Body(10, 10, [0, 0], [0, 0])
+    mars = ms.Body(10, 10, [10.0, 0.0], [0.0, 10.0])
 
     e_pos = []
     m_pos = []
@@ -23,8 +23,8 @@ def run_circle():
 
 
 def run():
-    earth = ms.Planet(1000, 10, [0, 0], [0, 0])
-    mars = ms.Planet(10, 10, [10.0, 0.0], [0.0, 10.0])
+    earth = ms.Body(1000, 10, [0, 0], [0, 0])
+    mars = ms.Body(10, 10, [10.0, 0.0], [0.0, 10.0])
 
     e_pos = []
     m_pos = []

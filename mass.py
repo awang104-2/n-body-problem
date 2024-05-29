@@ -1,8 +1,9 @@
 import numpy as np
 G = 10  # 6.67430/10**11
+DT = 0.001
 
 
-class Planet:
+class Body:
 
     def __init__(self, mass=0, radius=0, velocity=[0, 0], position=[0, 0]):
         self.m = mass  # mass in kilograms
@@ -37,17 +38,30 @@ class Planet:
     def get_velocity(self):
         return self.v
 
-    def get_direction(self, planet):
-        dir_vector = planet.pos - self.pos
+    # Returns the direction as a unit vector of the Body passed in from the Body calling the method.
+    def get_direction(self, body):
+        dir_vector = body.pos - self.pos
         unit_dir_vector = dir_vector/np.linalg.norm(dir_vector)
         return unit_dir_vector
 
 
-def get_gravity(planet1, planet2):
-    m1 = planet2.m
-    m2 = planet1.m
-    displacement = planet1.pos - planet2.pos
+def get_gravity(body1, body2):
+    m1 = body2.m
+    m2 = body1.m
+    displacement = body1.pos - body2.pos
     distance = np.linalg.norm(displacement)
     return G*m1*m2/distance**2
+
+
+def apply_dynamics(bodies, dt):
+    N = len(bodies)
+    for i in range(N):
+        for j in range(N):
+            if j != i:
+                force_mag = get_gravity(bodies[i], bodies[j])
+                unit_dir = bodies[i].get_direction(bodies[j])
+                f_g = -force_mag * unit_dir  # The gravitational force of bodies[i] applied to bodies[j], dir included.
+                bodies[j].apply_force(f_g, dt)
+                bodies[i].apply_force(-f_g, dt)
 
 
