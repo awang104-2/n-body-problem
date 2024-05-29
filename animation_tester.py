@@ -8,4 +8,5 @@ pos = np.transpose([np.linspace(0, 2, 1000), np.linspace(-2, 2, 1000)])
 circular_motion = an.Animation(main.run_circle(),  0.1)
 circular_motion.run()
 
+two_planets = an.Animation(main.run(), 0.1)
 
