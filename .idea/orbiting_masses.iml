@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="animation_sample" />
     <orderEntry type="module" module-name="burgers1d_godunov" />
+    <orderEntry type="module" module-name="numerical_integration" />
   </component>
 </module>

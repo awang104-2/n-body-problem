@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="842ea7b7-69f3-45b9-a980-c96d6a58504e" name="Changes" comment="" />
+    <list default="true" id="842ea7b7-69f3-45b9-a980-c96d6a58504e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/orbiting_masses.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/orbiting_masses.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jython_tester.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,9 +45,11 @@
     "Python.animation.executor": "Run",
     "Python.animation_sample.executor": "Run",
     "Python.animation_tester.executor": "Run",
+    "Python.integration_tester.executor": "Run",
     "Python.jython_tester.executor": "Run",
     "Python.main.executor": "Run",
     "Python.mass.executor": "Run",
+    "Python.pygame_tester.executor": "Run",
     "Python.tester.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "foo",
