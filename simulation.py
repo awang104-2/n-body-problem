@@ -1,12 +1,16 @@
 import pygame
 import mass as ms
+import numpy as np
 
 # pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+display = pygame.display.Info()
+screen = pygame.display.set_mode((display.current_w, 0.95*display.current_h))
 clock = pygame.time.Clock()
 running = True
 mouse_is_pressed = False
+
+rate = 100
 
 dt = 0.01
 m = 0
@@ -30,8 +34,9 @@ while running:
         if not mouse_is_pressed:
             mouse_is_pressed = True
             pos = pygame.mouse.get_pos()
-        m += 50
-        pygame.draw.circle(screen, "red", pos, m*0.02)
+        if m < 50*rate:
+            m += rate
+        pygame.draw.circle(screen, "red", pos, m/rate)
     else:
         if mouse_is_pressed:
             mouse_is_pressed = False
@@ -41,7 +46,7 @@ while running:
 
     N = len(bodies)
     for i in range(N):
-        pygame.draw.circle(screen, "red", bodies[i].get_pos(), bodies[i].m*0.02)
+        pygame.draw.circle(screen, "red", bodies[i].get_pos(), bodies[i].m/rate)
         ms.apply_dynamics(bodies, dt)
 
     # flip() the display to put your work on screen
@@ -50,6 +55,6 @@ while running:
     # limits FPS to 60
     # dt is delta time in seconds since last frame, used for framerate-
     # independent physics.
-    dt = clock.tick(60) / 1000
+    dt = clock.tick(144) / 1000
 
 pygame.quit()
