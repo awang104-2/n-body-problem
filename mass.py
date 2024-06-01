@@ -5,9 +5,8 @@ DT = 0.001
 
 class Body:
 
-    def __init__(self, mass=0, radius=0, velocity=[0, 0], position=[0, 0]):
+    def __init__(self, mass=0, velocity=[0, 0], position=[0, 0]):
         self.m = mass  # mass in kilograms
-        self.r = radius  # radius in meters
         self.pos = np.array(position)
         self.v = np.array(velocity)
 
@@ -50,6 +49,8 @@ def get_gravity(body1, body2):
     m2 = body1.m
     displacement = body1.pos - body2.pos
     distance = np.linalg.norm(displacement)
+    if distance < 50:
+        distance = 50
     return G*m1*m2/distance**2
 
 

@@ -1,22 +1,18 @@
-# Example file showing a circle moving on screen
 import pygame
-import numpy as np
+import mass as ms
 
 # pygame setup
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 running = True
-dt = 0
-
-player_pos = []
-
-vel_x = []
-vel_y = []
-radius = []
-
-circles = 0
 mouse_is_pressed = False
+
+dt = 0.01
+m = 0
+pos = [0, 0]
+bodies = []
+
 
 while running:
     # poll for events
@@ -29,21 +25,24 @@ while running:
     screen.fill("white")
 
     mouse = pygame.mouse.get_pressed()
-    keys = pygame.key.get_pressed()
 
     if mouse[0]:
         if not mouse_is_pressed:
-            circles += 1
             mouse_is_pressed = True
-            player_pos.append(pygame.mouse.get_pos())
-            radius.append(0)
-        radius[-1] += 2
+            pos = pygame.mouse.get_pos()
+        m += 50
+        pygame.draw.circle(screen, "red", pos, m*0.02)
     else:
         if mouse_is_pressed:
             mouse_is_pressed = False
+            body = ms.Body(m, [0, 0], pos)
+            bodies.append(body)
+            m = 0
 
-    for i in range(circles):
-        pygame.draw.circle(screen, "red", player_pos[i], radius[i])
+    N = len(bodies)
+    for i in range(N):
+        pygame.draw.circle(screen, "red", bodies[i].get_pos(), bodies[i].m*0.02)
+        ms.apply_dynamics(bodies, dt)
 
     # flip() the display to put your work on screen
     pygame.display.flip()
