@@ -1,6 +1,7 @@
 import numpy as np
 G = 10  # 6.67430/10**11
 DT = 0.001
+max_speed_limit = 1000
 
 
 class Body:
@@ -21,6 +22,10 @@ class Body:
 
     def accelerate(self, acceleration, dt):
         self.v = self.v + acceleration*dt
+        if np.linalg.norm(self.v) > max_speed_limit:
+            print("original:", self.v)
+            self.v = self.v/np.linalg.norm(self.v)*max_speed_limit
+            print("capped:", self.v)
 
     def get_gravity(self, planet):
         M = self.m
