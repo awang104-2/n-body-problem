@@ -1,7 +1,7 @@
 import numpy as np
-G = 10  # 6.67430/10**11
-DT = 0.001
-max_speed_limit = 1000
+
+G = 2  # Gravitational Constant
+max_speed_limit = 1000  # Speed Limit
 
 
 class Body:
@@ -55,7 +55,7 @@ def get_gravity(body1, body2):
     displacement = body1.pos - body2.pos
     distance = np.linalg.norm(displacement)
     if distance < 50:
-        distance = 50
+        return 0
     return G*m1*m2/distance**2
 
 
